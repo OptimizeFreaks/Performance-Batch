@@ -10,7 +10,7 @@ setlocal enabledelayedexpansion
 powershell "Set-ExecutionPolicy Unrestricted"
 
 :: Batch File Log
-echo Ancel's Performance Batch Log >APB_Log.txt
+echo Optimize Freak's Performance Batch Log >APB_Log.txt
 
 :: Enable ANSI Escape Sequences
 reg add "HKCU\CONSOLE" /v "VirtualTerminalLevel" /t REG_DWORD /d "1" /f >> APB_Log.txt
@@ -34,7 +34,7 @@ if '%choice%'=='2' goto Continue
 :: Creating Restore Point
 echo Creating Restore Point
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore" /v "SystemRestorePointCreationFrequency" /t REG_DWORD /d "0" /f >> APB_Log.txt
-powershell -ExecutionPolicy Bypass -Command "Checkpoint-Computer -Description 'Ancels Performance Batch' -RestorePointType 'MODIFY_SETTINGS'" >> APB_Log.txt
+powershell -ExecutionPolicy Bypass -Command "Checkpoint-Computer -Description 'Optimize Freaks Performance Batch' -RestorePointType 'MODIFY_SETTINGS'" >> APB_Log.txt
 
 :Continue
 cls
@@ -730,8 +730,8 @@ if '%choice%'=='3' goto IGPU
 echo Applying NVIDIA Inspector Profile
 curl -g -k -L -# -o "%temp%\nvidiaProfileInspector.zip" "https://github.com/Orbmu2k/nvidiaProfileInspector/releases/latest/download/nvidiaProfileInspector.zip" >> APB_Log.txt
 powershell -NoProfile Expand-Archive '%temp%\nvidiaProfileInspector.zip' -DestinationPath 'C:\NvidiaProfileInspector\' >> APB_Log.txt
-curl -g -k -L -# -o "C:\NvidiaProfileInspector\ancel_nv_profile.nip" "https://github.com/ancel1x/Ancels-Performance-Batch/raw/main/bin/ancel_nv_profile.nip" >> APB_Log.txt
-start "" /wait "C:\NvidiaProfileInspector\nvidiaProfileInspector.exe" "C:\NvidiaProfileInspector\ancel_nv_profile.nip" >> APB_Log.txt
+curl -g -k -L -# -o "C:\NvidiaProfileInspector\Optimize Freak_nv_profile.nip" "https://github.com/Optimize Freak1x/Optimize Freaks-Performance-Batch/raw/main/bin/Optimize Freak_nv_profile.nip" >> APB_Log.txt
+start "" /wait "C:\NvidiaProfileInspector\nvidiaProfileInspector.exe" "C:\NvidiaProfileInspector\Optimize Freak_nv_profile.nip" >> APB_Log.txt
 timeout /t 3 /nobreak > NUL
 
 :: Enable MSI Mode for GPU
@@ -1499,7 +1499,7 @@ if '%choice%'=='3' goto Menu
 :: Creating Restore Point
 echo Creating Restore Point
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore" /v "SystemRestorePointCreationFrequency" /t REG_DWORD /d "0" /f >> APB_Log.txt
-powershell -ExecutionPolicy Bypass -Command "Checkpoint-Computer -Description 'Ancels Performance Batch' -RestorePointType 'MODIFY_SETTINGS'" >> APB_Log.txt
+powershell -ExecutionPolicy Bypass -Command "Checkpoint-Computer -Description 'Optimize Freaks Performance Batch' -RestorePointType 'MODIFY_SETTINGS'" >> APB_Log.txt
 
 :NetworkTweaks
 cls
@@ -2167,10 +2167,10 @@ goto Other
 
 :PowerPlan
 cls
-echo Applying Ancels Power Plan
-:: Import Ancels Power Plan
-curl -g -k -L -# -o "C:\Ancels Power Plan.pow" "https://github.com/ancel1x/Ancels-Performance-Batch/raw/main/bin/Ancels_Power_Plan.pow" >> APB_Log.txt
-powercfg -import "C:\Ancels Power Plan.pow" 11111111-1111-1111-1111-111111111111 >> APB_Log.txt
+echo Applying Optimize Freaks Power Plan
+:: Import Optimize Freaks Power Plan
+curl -g -k -L -# -o "C:\Optimize Freaks Power Plan.pow" "https://github.com/Optimize Freak1x/Optimize Freaks-Performance-Batch/raw/main/bin/Optimize Freaks_Power_Plan.pow" >> APB_Log.txt
+powercfg -import "C:\Optimize Freaks Power Plan.pow" 11111111-1111-1111-1111-111111111111 >> APB_Log.txt
 powercfg -setactive 11111111-1111-1111-1111-111111111111 >> APB_Log.txt
 timeout /t 3 /nobreak > NUL
 
@@ -2252,7 +2252,7 @@ cls
 echo Disabling Devices
 
 :: Install DevManView
-curl -g -k -L -# -o "C:\Windows\System32\DevManView.exe" "https://github.com/ancel1x/Ancels-Performance-Batch/raw/main/bin/DevManView.exe" >> APB_Log.txt
+curl -g -k -L -# -o "C:\Windows\System32\DevManView.exe" "https://github.com/Optimize Freak1x/Optimize Freaks-Performance-Batch/raw/main/bin/DevManView.exe" >> APB_Log.txt
 timeout /t 3 /nobreak > NUL
 
 :: Disable Devices through DevManView
@@ -2340,8 +2340,8 @@ goto Other
 cls
 :: Install O&O Shutup and Import Config
 powershell Invoke-WebRequest "https://dl5.oo-software.com/files/ooshutup10/OOSU10.exe" -OutFile "%temp%\OOSU10.exe"
-curl -g -k -L -# -o "C:\ANCELOOSUIMPORT.cfg" "https://github.com/ancel1x/Ancels-Performance-Batch/raw/main/bin/ANCELOOSUIMPORT.cfg"
-start "" /wait "%temp%\OOSU10.exe" "C:\ANCELOOSUIMPORT.cfg" >> APB_Log.txt
+curl -g -k -L -# -o "C:\Optimize FreakOOSUIMPORT.cfg" "https://github.com/Optimize Freak1x/Optimize Freaks-Performance-Batch/raw/main/bin/Optimize FreakOOSUIMPORT.cfg"
+start "" /wait "%temp%\OOSU10.exe" "C:\Optimize FreakOOSUIMPORT.cfg" >> APB_Log.txt
 cls
 echo OOSU Ran Successfully
 timeout /t 5 /nobreak > NUL
